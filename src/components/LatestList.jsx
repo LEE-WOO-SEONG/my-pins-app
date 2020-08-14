@@ -10,7 +10,7 @@ const LatestFeedBlock = styled.div`
     column-gap: 20px;
   }
 `;
-export default function LatestFeed({ latPhotos }) {
+function LatestFeed({ latPhotos }) {
   return (
     <LatestFeedBlock>
       <h1>LatestFeed</h1>
@@ -24,3 +24,5 @@ export default function LatestFeed({ latPhotos }) {
     </LatestFeedBlock>
   );
 }
+
+export default React.memo(LatestFeed);

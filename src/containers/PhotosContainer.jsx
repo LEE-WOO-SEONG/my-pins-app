@@ -1,5 +1,5 @@
 import React from "react";
-import LatestFeed from "../components/LatestFeed";
+import LatestList from "../components/LatestList";
 import { useDispatch, useSelector } from "react-redux";
 import { startGetPhotosActionCreator } from "../redux/modules/photo";
 import PopularList from "../components/PopularList";
@@ -23,7 +23,7 @@ export default function PhotosContainer() {
   return (
     <div>
       <PopularList popPhotos={popPhotos}></PopularList>
-      <LatestFeed latPhotos={latPhotos}></LatestFeed>
+      <LatestList latPhotos={latPhotos}></LatestList>
     </div>
   );
 }

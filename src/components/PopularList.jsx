@@ -32,7 +32,7 @@ const PopularListBlock = styled.div`
   }
 `;
 
-export default function PopularList({ popPhotos }) {
+function PopularList({ popPhotos }) {
   return (
     <PopularListBlock>
       <h1>PopularList</h1>
@@ -46,3 +46,5 @@ export default function PopularList({ popPhotos }) {
     </PopularListBlock>
   );
 }
+
+export default React.memo(PopularList);
