@@ -1,49 +1,54 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { GoHome } from 'react-icons/go';
-import { MdFavoriteBorder } from 'react-icons/md';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { GoHome } from "react-icons/go";
+import { MdFavoriteBorder } from "react-icons/md";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // components
-import DarkModeButton from './DarkmodeButton';
+import DarkModeButton from "./DarkmodeButton";
 
 // styles
-import { SideTab } from '../styles/SideTabStyle';
+import { SideTab } from "../styles/SideTabStyle";
 
 const SearchInput = styled.div`
   input {
     padding: 10px;
-    color: lightgrey;
+    color: #495057;
     font-size: 18px;
     border-radius: 4px;
     border: #e9ecef 1px solid;
+    margin: 10px 30px;
   }
+  width: 1150px;
+  border-bottom: 1px #495057 solid;
 `;
 
-function Outline() {
+function Outline(props) {
   return (
     <>
-      <section className="header">
+      <header className="header">
         <SearchInput>
           <input type="text" placeholder="Search" />
         </SearchInput>
         <DarkModeButton />
-      </section>
+      </header>
       <SideTab className="sidebar">
         <ul>
-          <li>
-            <Link to="/" exact>
-              <GoHome />
-              <span>Feed</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/favorite">
-              <MdFavoriteBorder />
-              <span>Favorite</span>
-            </Link>
-          </li>
+          <div>
+            <li>
+              <Link to="/" exact>
+                <GoHome />
+                <span>Feed</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/favorite">
+                <MdFavoriteBorder />
+                <span>Favorite</span>
+              </Link>
+            </li>
+          </div>
           <li>
             <button>Create Post</button>
           </li>
