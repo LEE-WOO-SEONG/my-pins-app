@@ -1,6 +1,7 @@
-import React from 'react';
-import Outline from '../components/Outline';
-import useAuth from '../hooks/useAuth';
+import React from "react";
+import Outline from "../components/Outline";
+import useAuth from "../hooks/useAuth";
+import PhotosContainer from "../containers/PhotosContainer";
 
 function Home() {
   useAuth();
@@ -8,7 +9,9 @@ function Home() {
   return (
     <>
       <Outline />
-      <section className="main">Home</section>
+      <section className="main">
+        <PhotosContainer />
+      </section>
     </>
   );
 }

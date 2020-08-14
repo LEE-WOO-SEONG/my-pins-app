@@ -8,6 +8,14 @@ export const GlobalStyle = createGlobalStyle`
     color: ${props => props.theme.color};
   }
 
+  ul{
+    list-style: none;
+    padding: 0
+  }
+  li{
+    display: inline-flex;
+  }
+
   div#root {
     display: grid;
     min-height: 100vh;
@@ -26,5 +34,8 @@ export const GlobalStyle = createGlobalStyle`
     }
   section.main {
     grid-area: main;
+    background-color: grey;
+
+    padding: 24px;
   }
 `;
