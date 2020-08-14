@@ -1,11 +1,16 @@
 import React from 'react';
-import Outline from '../components/Outline';
+import { useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 function Signin() {
+  const { token } = useSelector(state => state.auth);
+  if (token !== null) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <>
-      <Outline />
-      <section className="main">signin</section>
+      <section>signin</section>
     </>
   );
 }
