@@ -1,15 +1,24 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import styled, { css } from 'styled-components';
-import { togglePhotos } from '../redux/modules/photo';
-import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io';
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import styled, { css } from "styled-components";
+import { togglePhotos } from "../redux/modules/photo";
+import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 
 const PhotoCard = styled.div`
   position: relative;
+  width: 240px;
+  height: 320px;
+
+  ${(props) =>
+    props.popular === true &&
+    css`
+      width: 240px;
+      height: 320px;
+    `}
   & img {
     border-radius: 12px;
-    width: 210px;
-    height: 300px;
+    width: 240px;
+    height: 320px;
     box-shadow: 1 1 3px lightgray;
 
     :hover {
@@ -19,7 +28,7 @@ const PhotoCard = styled.div`
       transform: scale(0.994);
     }
 
-    ${props =>
+    ${(props) =>
       props.popular === true &&
       css`
         width: 240px;
@@ -55,8 +64,8 @@ const LikeButton = styled.button`
 
 export default function Photo({ src, popular }) {
   const dispatch = useDispatch();
-  const [liked, setLiked] = useState(false);
 
+<<<<<<< HEAD
   const handleClick = React.useCallback(
     id => {
       dispatch(togglePhotos(id));
@@ -64,18 +73,18 @@ export default function Photo({ src, popular }) {
     },
     [dispatch, setLiked]
   );
+=======
+  const handleClick = React.useCallback(() => {
+    dispatch(togglePhotos(src.id));
+  }, [dispatch, src.id]);
+>>>>>>> e9bc3c9daac499d070c060d527f2bdfdace3da74
 
   return (
     <PhotoCard popular={popular}>
-      <LikeButton liked={liked}>
-        {liked ? <IoMdHeart /> : <IoMdHeartEmpty />}
+      <LikeButton liked={src.didIliked}>
+        {src.didIliked ? <IoMdHeart /> : <IoMdHeartEmpty />}
       </LikeButton>
-      <img
-        data-src=""
-        src={src.url}
-        alt="?"
-        onClick={() => handleClick(src.id)}
-      />
+      <img data-src="" src={src.url} alt="?" onClick={handleClick} />
     </PhotoCard>
   );
 }

@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
-import styled, { css } from 'styled-components';
-import { ThemeToggle } from '../App';
+import React, { useContext } from "react";
+import styled, { css } from "styled-components";
+import { ThemeToggle } from "../App";
 
 const StyledButton = styled.button`
   position: absolute;
@@ -8,7 +8,7 @@ const StyledButton = styled.button`
   right: 5px;
   width: 80px;
   height: 40px;
-  border-radius: 9999px;
+  border-radius: 20px;
   border: 2px solid #fff;
   background-color: #343a40;
   cursor: pointer;
@@ -18,10 +18,10 @@ const StyledButton = styled.button`
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-color: ${props => props.theme.bgColor};
+    background-color: ${(props) => props.theme.bgColor};
     transition: transform 0.4s;
 
-    ${props =>
+    ${(props) =>
       !props.theme.bool &&
       css`
         transform: translateX(40px);

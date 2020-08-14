@@ -60,16 +60,12 @@ const photoReducer = (state = initialState, action) => {
         error: action.error,
       };
     case TOGGLE:
+      const _photos = [...state.photos];
+      const targetIndex = _photos.findIndex((photo) => photo.id === action.id);
+      _photos[targetIndex].didIliked = !_photos[targetIndex].didIliked;
       return {
         loading: false,
-        photos: [
-          ...state.photos.filter((photo) => photo.id !== action.id),
-          {
-            ...state.photos.find((photo) => photo.id === action.id),
-            didIliked: !state.photos.find((photo) => photo.id === action.id)
-              .didIliked,
-          },
-        ],
+        photos: _photos,
         error: action.error,
       };
     default:

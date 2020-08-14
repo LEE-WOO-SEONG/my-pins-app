@@ -3,10 +3,11 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
   *{
     user-select: none;
+    outline:none;
   }
   body {
     margin: 0;
-    padding: 3% 10%;
+    padding: 0 10%;
     background-color: ${props => props.theme.bgColor};
     color: ${props => props.theme.color};
   }
@@ -16,13 +17,15 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0
   }
   li{
-    display: inline-flex;
+    margin: 15px 0;
+    display: inline-block;
   }
+
 
   div#root {
     display: grid;
     min-height: 100vh;
-    grid-template: 50px 1fr / 1fr 5fr;
+    grid-template: 40px 2fr / 220px 6fr;
     grid-template-areas:
       'sidebar header'
       'sidebar main'
@@ -37,6 +40,6 @@ export const GlobalStyle = createGlobalStyle`
     }
   section.main {
     grid-area: main;
-    padding: 24px;
+    padding: 10px 40px;
   }
 `;
