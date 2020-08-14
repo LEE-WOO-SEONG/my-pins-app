@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   *{
@@ -7,8 +7,8 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 3% 10%;
-    background-color: ${(props) => props.theme.bgColor};
-    color: ${(props) => props.theme.color};
+    background-color: ${props => props.theme.bgColor};
+    color: ${props => props.theme.color};
   }
 
   ul{
@@ -37,7 +37,6 @@ export const GlobalStyle = createGlobalStyle`
     }
   section.main {
     grid-area: main;
-
     padding: 24px;
   }
 `;

@@ -1,7 +1,7 @@
-import React from "react";
-import Photo from "./Photo";
-import styled from "styled-components";
-import { v4 as uuidv4 } from "uuid";
+import React from 'react';
+import Photo from './Photo';
+import styled from 'styled-components';
+import { v4 as uuidv4 } from 'uuid';
 
 const LatestListBlock = styled.div`
   width: 70vw;

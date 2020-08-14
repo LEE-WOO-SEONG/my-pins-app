@@ -19,7 +19,7 @@ const PhotoCard = styled.div`
       transform: scale(0.994);
     }
 
-    ${(props) =>
+    ${props =>
       props.popular === true &&
       css`
         width: 240px;
@@ -78,4 +78,12 @@ export default function Photo({ src, popular }) {
       />
     </PhotoCard>
   );
+<<<<<<< HEAD
+  function handleClick(id) {
+    dispatch(togglePhotos(id));
+    console.log('i like this');
+    // onclick();
+  }
+=======
+>>>>>>> a577a7a9cdce8d3c6f7760bd291b792832c4651d
 }

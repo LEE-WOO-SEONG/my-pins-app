@@ -1,16 +1,15 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { GoHome } from 'react-icons/go';
+import { MdFavoriteBorder } from 'react-icons/md';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // components
-import DarkModeButton from "./DarkmodeButton";
+import DarkModeButton from './DarkmodeButton';
 
 // styles
-import { SideTab } from "../styles/SideTabStyle";
-import { startGetPhotosActionCreator } from "../redux/modules/photo";
-// import { SearchInput } from "../styles/SearchInput";
+import { SideTab } from '../styles/SideTabStyle';
 
 const SearchInput = styled.div`
   input {
@@ -23,8 +22,6 @@ const SearchInput = styled.div`
 `;
 
 function Outline() {
-  const { token } = useSelector((state) => state.auth);
-
   return (
     <>
       <section className="header">
@@ -35,49 +32,25 @@ function Outline() {
       </section>
       <SideTab className="sidebar">
         <ul>
-          <div>
-            {sideTabs(token).map(({ id, title, link }) => (
-              <li key={id}>
-                <Link to={link}>{title}</Link>
-              </li>
-            ))}
-          </div>
           <li>
-            <button>
-              {token === null && (
-                <>
-                  <i className="fab fa-twitter"></i>
-                  <span>Signin</span>
-                </>
-              )}
-              {token !== null && <span>Create Post</span>}
-            </button>
+            <Link to="/" exact>
+              <GoHome />
+              <span>Feed</span>
+            </Link>
           </li>
-        </ul>{" "}
+          <li>
+            <Link to="/favorite">
+              <MdFavoriteBorder />
+              <span>Favorite</span>
+            </Link>
+          </li>
+          <li>
+            <button>Create Post</button>
+          </li>
+        </ul>
       </SideTab>
     </>
   );
 }
 
 export default Outline;
-
-// 사이드 메뉴 구성
-function sideTabs(token) {
-  const side = [
-    {
-      id: 1,
-      title: "Feed",
-      link: "/",
-    },
-  ];
-
-  if (token !== null) {
-    side.push({
-      id: 2,
-      title: "Favorite",
-      link: "/favorite",
-    });
-  }
-
-  return side;
-}

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 export const SideTab = styled.section`
   margin-top: 50px;
@@ -21,11 +21,12 @@ function commonstyle() {
       justify-content: space-between;
 
       li > a {
-        color: ${(props) => props.theme.color};
+        color: ${props => props.theme.color};
         font-weight: bold;
         font-size: 1.5rem;
         text-decoration: none;
         padding: 15px 30px;
+        margin-left: -20px;
         border-radius: 9999px;
         background-color: transparent;
         transition: background-color 0.3s;
@@ -33,19 +34,18 @@ function commonstyle() {
         cursor: pointer;
 
         &:hover {
-          background-color: ${(props) => props.theme.sideTabHover};
+          background-color: ${props => props.theme.sideTabHover};
         }
-      }
 
-      li:nth-child(1) > a {
-        display: block;
-        width: 50px;
+        span {
+          margin-left: 5px;
+        }
       }
 
       button {
         position: relative;
         font-size: 1.03rem;
-        background-color: ${(props) => props.theme.sideBtnColor};
+        background-color: ${props => props.theme.sideBtnColor};
         color: rgb(255, 255, 255);
         border: none;
         width: 100%;

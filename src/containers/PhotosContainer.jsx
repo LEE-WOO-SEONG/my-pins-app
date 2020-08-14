@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { startGetPhotosActionCreator } from "../redux/modules/photo";
-import PopularList from "../components/PopularList";
-import LatestList from "../components/LatestList";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { startGetPhotosActionCreator } from '../redux/modules/photo';
+import PopularList from '../components/PopularList';
+import LatestList from '../components/LatestList';
 
 export default function PhotosContainer() {
-  const photos = useSelector((state) => state.photos.photos);
+  const photos = useSelector(state => state.photos.photos);
   const _photos = photos.sort((a, b) => a.downloads > b.downloads);
   const popPhotos = _photos.slice(0, 10);
   const latPhotos = _photos.slice(10);

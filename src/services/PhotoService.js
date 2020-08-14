@@ -1,12 +1,12 @@
-import axios from "axios";
+import axios from 'axios';
 
-const baseURL = "https://api.unsplash.com";
-const collection = "162470";
+const baseURL = 'https://api.unsplash.com';
+const collection = '162470';
 const url = `/collections/${collection}/photos`;
 
-const client_id1 = "4UbjQ1m5GxGd3iH7DXW8KCUp_lF1C-k-bpOYwvNYj8k";
-const client_id2 = "LMXx8kbllH0CjiUu1DD2X4kcrT_FnR_9yTjacwXC8zY";
-const client_id3 = "nLiOUFEzySn2iky1ZHM9NiDoC99dDysByJVxIZ8r6YE";
+const client_id1 = '4UbjQ1m5GxGd3iH7DXW8KCUp_lF1C-k-bpOYwvNYj8k';
+const client_id2 = 'LMXx8kbllH0CjiUu1DD2X4kcrT_FnR_9yTjacwXC8zY';
+const client_id3 = 'nLiOUFEzySn2iky1ZHM9NiDoC99dDysByJVxIZ8r6YE';
 
 const params = {
   page: 10,
@@ -15,7 +15,7 @@ const params = {
 };
 
 const options = {
-  method: "GET",
+  method: 'GET',
   baseURL,
   url,
   params,
@@ -31,7 +31,7 @@ export default class {
     const data2 = await res2.data;
 
     // const result = data1.map((datum) => ({
-    const result = [...data1, ...data2].map((datum) => ({
+    const result = [...data1, ...data2].map(datum => ({
       id: datum.id,
       url: datum.urls.regular,
       alt_description: datum.alt_description,
