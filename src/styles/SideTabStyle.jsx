@@ -1,10 +1,9 @@
 import styled, { css } from 'styled-components';
 
 export const SideTab = styled.section`
-  margin-top: 100px;
-  ${commonstyle()}
-
-  button {
+  margin-top: 50px;
+  border-right: rgb(56, 68, 77) 1px solid;
+  ${commonstyle()} button {
     padding: 20px 30px;
   }
 `;
@@ -22,8 +21,6 @@ function commonstyle() {
       justify-content: space-between;
 
       li > a {
-        display: flex;
-        align-items: center;
         color: ${props => props.theme.color};
         font-weight: bold;
         font-size: 1.5rem;

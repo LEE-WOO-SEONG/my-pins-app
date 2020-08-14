@@ -1,11 +1,14 @@
-import React from 'react';
-import Outline from '../components/Outline';
+import React from "react";
+import Outline from "../components/Outline";
+import FavoriteList from "../components/FavoriteList";
 
 function Favorite() {
   return (
     <>
       <Outline />
-      <section className="main">Favorite</section>
+      <section className="main">
+        <FavoriteList />
+      </section>
     </>
   );
 }

@@ -32,13 +32,13 @@ const PopularListBlock = styled.div`
   }
 `;
 
-export default function PopularList({ popPhotos }) {
+function PopularList({ popPhotos }) {
   return (
     <PopularListBlock>
       <h1>PopularList</h1>
       <ul id="list-grid" style={{ overflow: "visible" }}>
-        {popPhotos.map((photo, i) => (
-          <li key={i}>
+        {popPhotos.map((photo) => (
+          <li key={photo.id}>
             <Photo src={photo} popular />
           </li>
         ))}
@@ -46,3 +46,5 @@ export default function PopularList({ popPhotos }) {
     </PopularListBlock>
   );
 }
+
+export default React.memo(PopularList);
