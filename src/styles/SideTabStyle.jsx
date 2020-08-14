@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const SideTab = styled.section`
+  margin-top: 50px;
   ${commonstyle()}
 
   button {
@@ -21,9 +22,9 @@ function commonstyle() {
       justify-content: space-between;
 
       li > a {
+        color: ${props => props.theme.color};
         font-weight: bold;
-        font-size: 1.3rem;
-        color: white;
+        font-size: 1.5rem;
         text-decoration: none;
         padding: 15px 30px;
         border-radius: 9999px;
@@ -33,7 +34,7 @@ function commonstyle() {
         cursor: pointer;
 
         &:hover {
-          background-color: rgba(244, 93, 34, 0.2);
+          background-color: ${props => props.theme.sideTabHover};
         }
       }
 
@@ -45,8 +46,8 @@ function commonstyle() {
       button {
         position: relative;
         font-size: 1.03rem;
-        color: #fff;
-        background-color: rgb(244, 93, 34);
+        background-color: ${props => props.theme.sideBtnColor};
+        color: rgb(255, 255, 255);
         border: none;
         width: 100%;
         border-radius: 9999px;
