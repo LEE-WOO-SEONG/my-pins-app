@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+// components
+import DarkModeButton from './DarkmodeButton';
+
 // styles
 import { SideTab } from '../styles/SideTabStyle';
 
@@ -12,6 +15,7 @@ function Outline() {
     <>
       <section className="header">
         <input type="text" />
+        <DarkModeButton />
       </section>
       <SideTab className="sidebar">
         <ul>
@@ -51,7 +55,7 @@ function sideTabs(token) {
 
   if (token !== null) {
     side.push({
-      id: 3,
+      id: 2,
       title: 'Favorite',
       link: '/favorite',
     });
