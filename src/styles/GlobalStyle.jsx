@@ -1,9 +1,17 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0 10%;
+  }
+
+  ul{
+    list-style: none;
+    padding: 0
+  }
+  li{
+    display: inline-flex;
   }
 
   div#root {
@@ -27,5 +35,7 @@ export const GlobalStyle = createGlobalStyle`
   section.main {
     grid-area: main;
     background-color: grey;
+
+    padding: 24px;
   }
 `;
