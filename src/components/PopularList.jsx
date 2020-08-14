@@ -1,7 +1,7 @@
-import React from "react";
-import Photo from "./Photo";
-import styled from "styled-components";
-import useWindowWidth from "../hooks/useWindowWidth";
+import React from 'react';
+import Photo from './Photo';
+import styled from 'styled-components';
+import useWindowWidth from '../hooks/useWindowWidth';
 
 const PopularListBlock = styled.div`
   max-width: 1100px;
@@ -38,17 +38,10 @@ const PopularListBlock = styled.div`
 function PopularList({ popPhotos }) {
   const width = useWindowWidth();
   return (
-<<<<<<< HEAD
-    <PopularListBlock>
-      <h1>PopularList</h1>
-      <ul id="list-grid" style={{ overflow: 'visible' }}>
-        {popPhotos.map(photo => (
-=======
     <PopularListBlock width={width}>
       <h1>Popular List</h1>
       <ul id="list-grid">
-        {popPhotos.map((photo) => (
->>>>>>> e9bc3c9daac499d070c060d527f2bdfdace3da74
+        {popPhotos.map(photo => (
           <li key={photo.id}>
             <Photo src={photo} popular />
           </li>
