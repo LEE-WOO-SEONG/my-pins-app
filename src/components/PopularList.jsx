@@ -1,6 +1,6 @@
-import React from "react";
-import Photo from "./Photo";
-import styled from "styled-components";
+import React from 'react';
+import Photo from './Photo';
+import styled from 'styled-components';
 
 const PopularListBlock = styled.div`
   width: 70vw;
@@ -36,8 +36,8 @@ function PopularList({ popPhotos }) {
   return (
     <PopularListBlock>
       <h1>PopularList</h1>
-      <ul id="list-grid" style={{ overflow: "visible" }}>
-        {popPhotos.map((photo) => (
+      <ul id="list-grid" style={{ overflow: 'visible' }}>
+        {popPhotos.map(photo => (
           <li key={photo.id}>
             <Photo src={photo} popular />
           </li>

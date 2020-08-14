@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import styled, { css } from "styled-components";
-import { togglePhotos } from "../redux/modules/photo";
-import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import styled, { css } from 'styled-components';
+import { togglePhotos } from '../redux/modules/photo';
+import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io';
 
 const PhotoCard = styled.div`
   position: relative;
@@ -58,9 +58,9 @@ export default function Photo({ src, popular }) {
   const [liked, setLiked] = useState(false);
 
   const handleClick = React.useCallback(
-    (id) => {
+    id => {
       dispatch(togglePhotos(id));
-      setLiked((liked) => !liked);
+      setLiked(liked => !liked);
     },
     [dispatch, setLiked]
   );
@@ -78,12 +78,4 @@ export default function Photo({ src, popular }) {
       />
     </PhotoCard>
   );
-<<<<<<< HEAD
-  function handleClick(id) {
-    dispatch(togglePhotos(id));
-    console.log('i like this');
-    // onclick();
-  }
-=======
->>>>>>> a577a7a9cdce8d3c6f7760bd291b792832c4651d
 }

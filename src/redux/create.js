@@ -13,7 +13,6 @@ const preLoadedState = {
   auth: {
     token: '',
   },
-  // photos: {},
 };
 
 export default function create() {

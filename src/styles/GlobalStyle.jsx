@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
   div#root {
     display: grid;
     min-height: 100vh;
-    grid-template: 50px 1fr / 1fr 6fr;
+    grid-template: 50px 1fr / 1fr 5fr;
     grid-template-areas:
       'sidebar header'
       'sidebar main'

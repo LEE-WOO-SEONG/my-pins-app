@@ -33,19 +33,19 @@ function Outline() {
       <SideTab className="sidebar">
         <ul>
           <li>
-            <Link to="/" exact>
+            <Link to="/" exact="true">
               <GoHome />
               <span>Feed</span>
             </Link>
           </li>
           <li>
-            <Link to="/favorite">
+            <Link to="/favorite" exact="true">
               <MdFavoriteBorder />
               <span>Favorite</span>
             </Link>
           </li>
           <li>
-            <button>Create Post</button>
+            <button>Sign out</button>
           </li>
         </ul>
       </SideTab>
