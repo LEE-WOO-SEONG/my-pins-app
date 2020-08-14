@@ -1,12 +1,12 @@
-import React from "react";
-import LatestFeed from "../components/LatestFeed";
-import { useDispatch, useSelector } from "react-redux";
-import { startGetPhotosActionCreator } from "../redux/modules/photo";
-import PopularList from "../components/PopularList";
-import { useEffect } from "react";
+import React from 'react';
+import LatestFeed from '../components/LatestFeed';
+import { useDispatch, useSelector } from 'react-redux';
+import { startGetPhotosActionCreator } from '../redux/modules/photo';
+import PopularList from '../components/PopularList';
+import { useEffect } from 'react';
 
 export default function PhotosContainer() {
-  const photos = useSelector((state) => state.photos.photos);
+  const photos = useSelector(state => state.photos.photos);
 
   const dispatch = useDispatch();
   const getPhotos = React.useCallback(() => {

@@ -1,12 +1,15 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import styled, { css } from "styled-components";
-import { togglePhotos } from "../redux/modules/photo";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import styled, { css } from 'styled-components';
+import { togglePhotos } from '../redux/modules/photo';
 
 const PhotoCard = styled.div`
   & img {
     border-radius: 12px;
     width: 210px;
+    /* max-width: 290px; */
+    /* min-width: 210px; */
+    /* max-height: 300px; */
 
     box-shadow: 1 1 3px lightgray;
 
@@ -17,7 +20,7 @@ const PhotoCard = styled.div`
       transform: scale(0.994);
     }
 
-    ${(props) =>
+    ${props =>
       props.popular === true &&
       css`
         height: 300px;
@@ -39,7 +42,7 @@ export default function Photo({ src, popular }) {
   );
   function handleClick(id) {
     dispatch(togglePhotos(id));
-    console.log("i like this");
+    console.log('i like this');
     // onclick();
   }
 }

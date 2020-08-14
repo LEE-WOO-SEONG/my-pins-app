@@ -1,21 +1,21 @@
-import axios from "axios";
+import axios from 'axios';
 
-const baseURL = "https://api.unsplash.com";
-const url = "/photos/random";
-const client_id1 = "4UbjQ1m5GxGd3iH7DXW8KCUp_lF1C-k-bpOYwvNYj8k";
-const client_id2 = "LMXx8kbllH0CjiUu1DD2X4kcrT_FnR_9yTjacwXC8zY";
+const baseURL = 'https://api.unsplash.com';
+const url = '/photos/random';
+const client_id1 = '4UbjQ1m5GxGd3iH7DXW8KCUp_lF1C-k-bpOYwvNYj8k';
+const client_id2 = 'LMXx8kbllH0CjiUu1DD2X4kcrT_FnR_9yTjacwXC8zY';
 const params = {
-  content_filter: "high",
+  content_filter: 'high',
   featured: true,
-  orientation: "portrait",
-  query: "wallpaper",
+  orientation: 'portrait',
+  query: 'wallpaper',
   count: 50,
   w: 700,
-  client_id: client_id1,
+  client_id: client_id2,
 };
 
 const options = {
-  method: "GET",
+  method: 'GET',
   baseURL,
   url,
   params,
@@ -31,7 +31,7 @@ export default class {
     const data2 = await res2.data;
 
     // const result = data1.map((datum) => ({
-    const result = [...data1, ...data2].map((datum) => ({
+    const result = [...data1, ...data2].map(datum => ({
       id: datum.id,
       url: datum.urls.custom,
       alt_description: datum.alt_description,

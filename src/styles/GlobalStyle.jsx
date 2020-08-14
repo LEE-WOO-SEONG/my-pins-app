@@ -34,8 +34,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   section.main {
     grid-area: main;
-    background-color: grey;
-
+    /* background-color: grey; */
     padding: 24px;
   }
 `;
