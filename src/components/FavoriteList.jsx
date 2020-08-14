@@ -10,9 +10,9 @@ export default function FavoritePhotos() {
       <ul id="list-grid" style={{ overflow: "visible" }}>
         {photos
           .filter((photo) => photo.didIliked)
-          .map((photo, i) => (
-            <li key={i}>
-              <Photo src={photo} popular />
+          .map((photo) => (
+            <li key={photo.id}>
+              <Photo src={photo} />
             </li>
           ))}
       </ul>

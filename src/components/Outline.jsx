@@ -1,29 +1,47 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+
+import styled from "styled-components";
 
 // components
-import DarkModeButton from './DarkmodeButton';
+import DarkModeButton from "./DarkmodeButton";
 
 // styles
-import { SideTab } from '../styles/SideTabStyle';
+import { SideTab } from "../styles/SideTabStyle";
+import { startGetPhotosActionCreator } from "../redux/modules/photo";
+// import { SearchInput } from "../styles/SearchInput";
+
+const SearchInput = styled.div`
+  input {
+    padding: 10px;
+    color: lightgrey;
+    font-size: 18px;
+    border-radius: 4px;
+    border: #e9ecef 1px solid;
+  }
+`;
 
 function Outline() {
-  const { token } = useSelector(state => state.auth);
+  const { token } = useSelector((state) => state.auth);
 
   return (
     <>
       <section className="header">
-        <input type="text" />
+        <SearchInput>
+          <input type="text" placeholder="Search" />
+        </SearchInput>
         <DarkModeButton />
       </section>
       <SideTab className="sidebar">
         <ul>
-          {sideTabs(token).map(({ id, title, link }) => (
-            <li key={id}>
-              <Link to={link}>{title}</Link>
-            </li>
-          ))}
+          <div>
+            {sideTabs(token).map(({ id, title, link }) => (
+              <li key={id}>
+                <Link to={link}>{title}</Link>
+              </li>
+            ))}
+          </div>
           <li>
             <button>
               {token === null && (
@@ -35,7 +53,7 @@ function Outline() {
               {token !== null && <span>Create Post</span>}
             </button>
           </li>
-        </ul>{' '}
+        </ul>{" "}
       </SideTab>
     </>
   );
@@ -48,16 +66,16 @@ function sideTabs(token) {
   const side = [
     {
       id: 1,
-      title: 'Feed',
-      link: '/',
+      title: "Feed",
+      link: "/",
     },
   ];
 
   if (token !== null) {
     side.push({
       id: 2,
-      title: 'Favorite',
-      link: '/favorite',
+      title: "Favorite",
+      link: "/favorite",
     });
   }
 

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled, { css } from "styled-components";
 import { togglePhotos } from "../redux/modules/photo";
-
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 
 const PhotoCard = styled.div`
@@ -10,7 +9,7 @@ const PhotoCard = styled.div`
   & img {
     border-radius: 12px;
     width: 210px;
-
+    height: 300px;
     box-shadow: 1 1 3px lightgray;
 
     :hover {
@@ -23,7 +22,8 @@ const PhotoCard = styled.div`
     ${(props) =>
       props.popular === true &&
       css`
-        height: 300px;
+        width: 240px;
+        height: 320px;
       `}
   }
 

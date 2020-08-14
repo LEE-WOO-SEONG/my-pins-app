@@ -37,8 +37,8 @@ function PopularList({ popPhotos }) {
     <PopularListBlock>
       <h1>PopularList</h1>
       <ul id="list-grid" style={{ overflow: "visible" }}>
-        {popPhotos.map((photo, i) => (
-          <li key={i}>
+        {popPhotos.map((photo) => (
+          <li key={photo.id}>
             <Photo src={photo} popular />
           </li>
         ))}

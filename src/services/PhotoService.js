@@ -1,17 +1,17 @@
 import axios from "axios";
 
 const baseURL = "https://api.unsplash.com";
-const url = "/photos/random";
+const collection = "162470";
+const url = `/collections/${collection}/photos`;
+
 const client_id1 = "4UbjQ1m5GxGd3iH7DXW8KCUp_lF1C-k-bpOYwvNYj8k";
 const client_id2 = "LMXx8kbllH0CjiUu1DD2X4kcrT_FnR_9yTjacwXC8zY";
+const client_id3 = "nLiOUFEzySn2iky1ZHM9NiDoC99dDysByJVxIZ8r6YE";
+
 const params = {
-  content_filter: "high",
-  featured: true,
-  orientation: "portrait",
-  query: "wallpaper",
-  count: 50,
-  w: 700,
-  client_id: client_id1,
+  page: 10,
+  per_page: 100,
+  client_id: client_id3,
 };
 
 const options = {
@@ -33,13 +33,13 @@ export default class {
     // const result = data1.map((datum) => ({
     const result = [...data1, ...data2].map((datum) => ({
       id: datum.id,
-      url: datum.urls.custom,
+      url: datum.urls.regular,
       alt_description: datum.alt_description,
-      downloads: datum.downloads,
+      likes: datum.likes,
       created_at: datum.created_at,
       didIliked: false,
     }));
-    console.log(result);
+    console.log(data1);
     return result;
   }
 }

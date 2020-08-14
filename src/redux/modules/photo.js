@@ -63,7 +63,7 @@ const photoReducer = (state = initialState, action) => {
       return {
         loading: false,
         photos: [
-          ...state.photos,
+          ...state.photos.filter((photo) => photo.id !== action.id),
           {
             ...state.photos.find((photo) => photo.id === action.id),
             didIliked: !state.photos.find((photo) => photo.id === action.id)
@@ -77,10 +77,10 @@ const photoReducer = (state = initialState, action) => {
   }
 };
 
-const START_GET_PHOTOS = "START_GET_PHOTOS";
+const START_GET_PHOTOS_SAGA = "START_GET_PHOTOS_SAGA";
 
 export const startGetPhotosActionCreator = () => ({
-  type: START_GET_PHOTOS,
+  type: START_GET_PHOTOS_SAGA,
 });
 
 function* startGetPhotosSaga(action) {
@@ -96,7 +96,7 @@ function* startGetPhotosSaga(action) {
 
 // saga
 export function* photosSaga() {
-  yield takeLatest(START_GET_PHOTOS, startGetPhotosSaga);
+  yield takeLatest(START_GET_PHOTOS_SAGA, startGetPhotosSaga);
 }
 
 export default photoReducer;
